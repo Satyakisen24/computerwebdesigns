@@ -543,7 +543,9 @@ h3 {
     margin-bottom: 1.5rem;
     display: flex;
     justify-content: space-between;
-    align-items: baseline;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
 }
 
 .portfolio-domain {
@@ -556,7 +558,7 @@ h3 {
 .portfolio-tag {
     font-size: 0.7rem;
     text-transform: uppercase;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.15em;
     font-weight: 700;
     border: 1px solid var(--text-primary);
     padding: 3px 8px;

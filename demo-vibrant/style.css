@@ -1,31 +1,43 @@
 /* ==========================================================================
-   VIBRANT MODERNIST STUDIO DESIGN SYSTEM
+   VIBRANT MODERNIST STUDIO DESIGN SYSTEM (ULTRA COLORFUL EDITION)
    ========================================================================== */
 
 :root {
     --bg-primary: #ffffff;
-    --bg-secondary: #fbf9f6; /* Warm sand cream */
-    --text-primary: #1e1b18; /* Rich deep charcoal */
-    --text-secondary: #4a4540;
-    --text-muted: #7c756e;
+    --bg-secondary: #fbf9f6; 
+    
+    /* Saturated Warm & Cool Section Backgrounds */
+    --bg-hero: linear-gradient(135deg, #ffece2 0%, #e0faf9 50%, #e8eaff 100%);
+    --bg-packages: #fff6f0;      /* Warm Peach Canvas */
+    --bg-portfolio: #eafbfb;     /* Mint Teal Canvas */
+    --bg-reviews: #f3ecfb;       /* Periwinkle Lavender Canvas */
+    --bg-contact: #fff0eb;       /* Soft Terracotta Canvas */
+    
+    --text-primary: #1a1714;     /* Deep Cocoa Charcoal */
+    --text-secondary: #47423d;
+    --text-muted: #78716b;
     
     --border-light: 1px solid #ebdcd0;
-    --border-dark: 2px solid #1e1b18;
+    --border-dark: 2px solid #1a1714;
     
-    /* Elegant Modernist Accents */
-    --color-creative: #ff7e67; /* Terracotta Orange */
-    --color-creative-bg: #fff5f2;
-    --color-creative-grad: linear-gradient(135deg, #fffcfb 0%, #ffece7 100%);
+    /* Accent Palette */
+    --color-creative: #ff6a4d;        /* Coral Terracotta */
+    --color-creative-bg: #fff0eb;
+    --color-creative-grad: linear-gradient(135deg, #fffcfb 0%, #ffdecb 100%);
     
-    --color-clean: #00b3b3; /* Mint Teal */
-    --color-clean-bg: #f2fcfc;
-    --color-clean-grad: linear-gradient(135deg, #f7fdfd 0%, #e0f6f6 100%);
+    --color-clean: #00b0b0;           /* Vibrant Teal */
+    --color-clean-bg: #f0fbfc;
+    --color-clean-grad: linear-gradient(135deg, #f7fdfd 0%, #c6f0f0 100%);
     
-    --color-advisory: #4a6cf7; /* Royal Blue */
-    --color-advisory-bg: #f4f6ff;
-    --color-advisory-grad: linear-gradient(135deg, #f9faff 0%, #eef1ff 100%);
+    --color-advisory: #3b5bdb;        /* Royal Blue */
+    --color-advisory-bg: #f2f4ff;
+    --color-advisory-grad: linear-gradient(135deg, #f9faff 0%, #dbdfff 100%);
     
-    --color-gradient-mesh: linear-gradient(135deg, #fff3ee 0%, #f4fbfc 50%, #f5f7ff 100%);
+    /* pricing configurator Active Tab Colors */
+    --tab-starter-active: #fef08a;    /* Sunny Yellow */
+    --tab-business-active: #99f6e4;   /* Pale Mint */
+    --tab-corporate-active: #bfdbfe;  /* Royal Periwinkle */
+    --tab-seo-active: #fed7aa;        /* Soft Tangerine */
     
     --font-heading: 'Playfair Display', Georgia, serif;
     --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
@@ -73,7 +85,7 @@ section {
 
 /* Navigation & Back bar */
 .back-hub-bar {
-    background: #1e1b18;
+    background: #1a1714;
     color: #ffffff;
     padding: 0.6rem 0;
     font-size: 0.8rem;
@@ -233,13 +245,14 @@ h3 {
 
 /* Hero Section */
 .hero-section {
-    background: var(--color-gradient-mesh);
+    background: var(--bg-hero);
     padding: 9rem 0;
+    border-bottom: var(--border-light);
 }
 
 .hero-layout {
     display: grid;
-    grid-template-columns: 1.1fr 0.9fr;
+    grid-template-columns: 1.15fr 0.85fr;
     align-items: center;
     gap: 4rem;
 }
@@ -283,7 +296,7 @@ h3 {
     padding: 2.25rem 2rem;
     border-radius: var(--radius-md);
     border: var(--border-light);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.04);
     width: 280px;
     transition: var(--transition);
 }
@@ -293,18 +306,18 @@ h3 {
 }
 
 .hero-visual-card.c-1 {
-    background: var(--bg-primary);
+    background: #fffdfb;
     left: 0;
     top: 0;
-    border-left: 4px solid var(--color-creative);
+    border-left: 5px solid var(--color-creative);
     z-index: 2;
 }
 
 .hero-visual-card.c-2 {
-    background: var(--bg-secondary);
+    background: #f4fdfd;
     right: 0;
     bottom: 0;
-    border-left: 4px solid var(--color-clean);
+    border-left: 5px solid var(--color-clean);
     z-index: 1;
 }
 
@@ -322,9 +335,9 @@ h3 {
     line-height: 1.4;
 }
 
-/* Packages Section (Warm Background) */
+/* Packages Section */
 #packages {
-    background-color: var(--bg-secondary);
+    background-color: var(--bg-packages);
 }
 
 .pricing-selector-container {
@@ -332,7 +345,7 @@ h3 {
     border: var(--border-light);
     border-radius: var(--radius-md);
     overflow: hidden;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.02);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.03);
 }
 
 .package-tabs {
@@ -389,19 +402,23 @@ h3 {
     background: #fafaf7;
 }
 
-.package-tab.active {
-    background: #ffffff;
-    position: relative;
+/* Color-coded active states for package tabs */
+.package-tab:nth-child(1).active {
+    background: var(--tab-starter-active);
+}
+.package-tab:nth-child(2).active {
+    background: var(--tab-business-active);
+}
+.package-tab:nth-child(3).active {
+    background: var(--tab-corporate-active);
+}
+.package-tab:nth-child(4).active {
+    background: var(--tab-seo-active);
 }
 
-.package-tab.active::after {
-    content: "";
-    position: absolute;
-    bottom: -1px;
-    left: 0;
-    width: 100%;
-    height: 4px;
-    background: var(--color-creative);
+.package-tab.active {
+    position: relative;
+    border-bottom: none;
 }
 
 .pt-title {
@@ -535,6 +552,10 @@ h3 {
 }
 
 /* Portfolio Section */
+#portfolio {
+    background-color: var(--bg-portfolio);
+}
+
 .portfolio-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -548,25 +569,26 @@ h3 {
     display: flex;
     flex-direction: column;
     transition: var(--transition);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.01);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.015);
 }
 
 .portfolio-card:hover {
     transform: translateY(-6px);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
 }
 
+/* More Saturated Card Backgrounds */
 .portfolio-card.charmaine {
     background: var(--color-creative-grad);
-    border-top: 3px solid var(--color-creative);
+    border-top: 5px solid var(--color-creative);
 }
 .portfolio-card.carrier {
     background: var(--color-clean-grad);
-    border-top: 3px solid var(--color-clean);
+    border-top: 5px solid var(--color-clean);
 }
 .portfolio-card.susan {
     background: var(--color-advisory-grad);
-    border-top: 3px solid var(--color-advisory);
+    border-top: 5px solid var(--color-advisory);
 }
 
 /* Fix overlap issue by wrapping and adding gap */
@@ -592,7 +614,7 @@ h3 {
     text-transform: uppercase;
     letter-spacing: 0.15em;
     font-weight: 700;
-    padding: 3px 10px;
+    padding: 4px 10px;
     color: #ffffff;
     border-radius: 4px;
 }
@@ -630,9 +652,9 @@ h3 {
     transform: translateX(3px);
 }
 
-/* Reviews Section (Lavender Tint background) */
+/* Reviews Section */
 #reviews {
-    background-color: #f3eff9;
+    background-color: var(--bg-reviews);
 }
 
 .reviews-grid {
@@ -642,7 +664,6 @@ h3 {
 }
 
 .review-card {
-    background: #ffffff;
     border: var(--border-light);
     border-radius: var(--radius-md);
     padding: 2.75rem 2.25rem;
@@ -650,17 +671,27 @@ h3 {
     flex-direction: column;
     justify-content: space-between;
     transition: var(--transition);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.015);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.02);
 }
 
 .review-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 12px 25px rgba(0,0,0,0.04);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.06);
 }
 
-.review-card.creative-border { border-left: 4px solid var(--color-creative); }
-.review-card.commercial-border { border-left: 4px solid var(--color-clean); }
-.review-card.biographical-border { border-left: 4px solid var(--color-advisory); }
+/* Color-coded Review Card Backgrounds */
+.review-card.creative-border {
+    background: #fffcfb;
+    border-left: 5px solid var(--color-creative);
+}
+.review-card.commercial-border {
+    background: #f7fdfd;
+    border-left: 5px solid var(--color-clean);
+}
+.review-card.biographical-border {
+    background: #f9faff;
+    border-left: 5px solid var(--color-advisory);
+}
 
 .review-quote {
     font-family: var(--font-heading);
@@ -685,7 +716,7 @@ h3 {
 
 /* Contact/Inquiry Section */
 #contact {
-    background-color: var(--bg-secondary);
+    background-color: var(--bg-contact);
 }
 
 .contact-layout {
@@ -696,7 +727,7 @@ h3 {
     border: var(--border-light);
     border-radius: var(--radius-md);
     padding: 4rem 3.5rem;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.02);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.03);
 }
 
 @media (max-width: 900px) {
@@ -819,16 +850,16 @@ h3 {
     padding-right: 2.5rem;
 }
 
-/* Footer (Deep charcoal/navy Canvas) */
+/* Footer (Deep Indigo Canvas) */
 footer.vibrant-footer {
     padding: 5.5rem 0;
-    background: #191715;
-    color: #a49d95;
-    border-top: 2px solid var(--color-creative);
+    background: #0f131f;        /* Deep Midnight Indigo */
+    color: #949eb8;
+    border-top: 4px solid var(--color-creative);
 }
 
 footer.vibrant-footer a {
-    color: #a49d95;
+    color: #949eb8;
 }
 
 footer.vibrant-footer a:hover {
@@ -840,7 +871,7 @@ footer.vibrant-footer a:hover {
     justify-content: space-between;
     align-items: flex-start;
     padding-bottom: 3.5rem;
-    border-bottom: 1px solid #2f2a24;
+    border-bottom: 1px solid #202636;
     margin-bottom: 2.5rem;
 }
 

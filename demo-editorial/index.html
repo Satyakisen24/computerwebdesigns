@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Webs — Editorial Serif Demo</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Space+Mono&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Back to Hub Bar -->
+    <div class="back-hub-bar">
+        <div class="container">
+            <a href="../index.html">← Back to Hub Collection</a>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="container nav-container">
+            <a href="#" class="logo">Dynamic Webs.</a>
+            <ul class="nav-links">
+                <li><a href="#portfolio">Selected Work</a></li>
+                <li><a href="#packages">Pricing & Packages</a></li>
+                <li><a href="#reviews">Client Reviews</a></li>
+                <li><a href="#contact">Inquire</a></li>
+            </ul>
+            <div>
+                <a href="#contact" class="btn-editorial primary" style="padding: 0.6rem 1.25rem; font-size: 0.75rem;">Get Scoping Session</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <span class="hero-tag">Aesthetic Engineering</span>
+                <h1>We design websites with absolute clarity and silent prestige.</h1>
+                <p class="hero-subtitle">Premium custom layouts, lightning-fast rendering speeds, and minimal noise. Tailored to represent your business starting from $500.</p>
+                <div class="hero-btns">
+                    <a href="#packages" class="btn-editorial primary">View Packages</a>
+                    <a href="#portfolio" class="btn-editorial outline">See Our Work</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Packages Section -->
+    <section id="packages">
+        <div class="container">
+            <h2 class="section-title">Website Scoping Packages</h2>
+            <div class="packages-grid">
+                
+                <!-- Package 1 -->
+                <div class="package-card">
+                    <h3 class="package-name">Starter Presentation</h3>
+                    <span class="package-pages">2 Page Website Build</span>
+                    <div class="package-price-row">
+                        <span class="package-price">$500</span>
+                        <span class="package-price-sub">One-time development cost</span>
+                    </div>
+                    <ul class="package-details-list">
+                        <li>1 Custom Homepage Layout</li>
+                        <li>1 Contact & Scoping Form</li>
+                        <li>Fully Responsive & Mobile Native</li>
+                        <li>Basic On-Page SEO Configurations</li>
+                        <li>Secure Server Deploy support</li>
+                        <li>1 Revision Cycle</li>
+                    </ul>
+                    <button class="btn-editorial outline" onclick="orderPackage('2', false)">Order Package</button>
+                </div>
+
+                <!-- Package 2 -->
+                <div class="package-card highlight">
+                    <span class="badge-popular">Most Selected</span>
+                    <h3 class="package-name">Business Suite</h3>
+                    <span class="package-pages">4 Page Website Build</span>
+                    <div class="package-price-row">
+                        <span class="package-price">$700</span>
+                        <span class="package-price-sub">One-time development cost</span>
+                    </div>
+                    <ul class="package-details-list">
+                        <li>1 Custom Homepage Screen</li>
+                        <li>About / Biography Section</li>
+                        <li>Services Grid or Product Showcase</li>
+                        <li>Custom Lead Scoping Form</li>
+                        <li>Enhanced Performance Tuning</li>
+                        <li>3 Revision Cycles</li>
+                    </ul>
+                    <button class="btn-editorial primary" onclick="orderPackage('4', false)">Order Package</button>
+                </div>
+
+                <!-- Package 3 -->
+                <div class="package-card">
+                    <h3 class="package-name">Corporate Platform</h3>
+                    <span class="package-pages">5+ Page Website Build</span>
+                    <div class="package-price-row">
+                        <span class="package-price">$900<span style="font-size: 1.5rem;">+</span></span>
+                        <span class="package-price-sub">One-time development cost</span>
+                    </div>
+                    <ul class="package-details-list">
+                        <li>Homepage & Custom Framework</li>
+                        <li>Biography & Milestones Profile</li>
+                        <li>Interactive Services Showcase</li>
+                        <li>Case Studies or Article Board</li>
+                        <li>Full Performance Optimization</li>
+                        <li>4 Revision Cycles</li>
+                    </ul>
+                    <button class="btn-editorial outline" onclick="orderPackage('5', false)">Order Package</button>
+                </div>
+
+                <!-- Package 4 (SEO) -->
+                <div class="package-card">
+                    <h3 class="package-name">SEO & Google Maps</h3>
+                    <span class="package-pages">Marketing Add-on</span>
+                    <div class="package-price-row">
+                        <span class="package-price">$75<span style="font-size: 1.2rem; font-family: var(--font-body); font-weight: 500;">/wk</span></span>
+                        <span class="package-price-sub">Paid Monthly ($300/mo)</span>
+                    </div>
+                    <ul class="package-details-list">
+                        <li>Google Maps Rank Optimization</li>
+                        <li>Google Business Profile management</li>
+                        <li>Local Keyword Sync Configuration</li>
+                        <li>Monthly Citation & directory builds</li>
+                        <li>Bi-weekly Search Ranking report</li>
+                        <li>Maps traffic metrics reports</li>
+                    </ul>
+                    <button class="btn-editorial outline" onclick="orderPackage('seo', true)">Order SEO Setup</button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio">
+        <div class="container">
+            <h2 class="section-title">Selected Case Studies</h2>
+            <div class="portfolio-grid">
+                
+                <!-- Portfolio item 1 -->
+                <div class="portfolio-card charmaine">
+                    <div class="portfolio-header">
+                        <span class="portfolio-domain">charmainesworld.com</span>
+                        <span class="portfolio-tag">Creative</span>
+                    </div>
+                    <h3 class="portfolio-title">Charmaine's World</h3>
+                    <p class="portfolio-desc">A creative portfolio and writing hub configured to display narrative essays, visual art directions, and custom layout collections.</p>
+                    <a href="../cases/charmaine.html" class="portfolio-link">Explore layout →</a>
+                </div>
+
+                <!-- Portfolio item 2 -->
+                <div class="portfolio-card carrier">
+                    <div class="portfolio-header">
+                        <span class="portfolio-domain">carrierhomecleanings.com</span>
+                        <span class="portfolio-tag">Commercial</span>
+                    </div>
+                    <h3 class="portfolio-title">Carrier Home Cleaning Services</h3>
+                    <p class="portfolio-desc">A clean service catalog featuring service menus, flat rate tables, scheduling integrations, and mobile customer capture forms.</p>
+                    <a href="../cases/carrier.html" class="portfolio-link">Explore layout →</a>
+                </div>
+
+                <!-- Portfolio item 3 -->
+                <div class="portfolio-card susan">
+                    <div class="portfolio-header">
+                        <span class="portfolio-domain">susancarrier.com</span>
+                        <span class="portfolio-tag">Biographical</span>
+                    </div>
+                    <h3 class="portfolio-title">Susan Carrier Advisory</h3>
+                    <p class="portfolio-desc">An executive profile outlining board advisory accomplishments, case studies, client timelines, and professional publications.</p>
+                    <a href="../cases/susan.html" class="portfolio-link">Explore layout →</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="reviews" style="background: var(--bg-secondary);">
+        <div class="container">
+            <h2 class="section-title">Client Testimonials</h2>
+            <div class="reviews-grid">
+                
+                <!-- Review 1 -->
+                <div class="review-card">
+                    <div class="review-quote">
+                        <span>“Dynamic Webs took my unstructured portfolio ideas and crafted a gorgeous, highly publication-grade presentation interface. I'm constantly receiving compliments on the layout design.”</span>
+                    </div>
+                    <div>
+                        <div class="review-author">Charmaine</div>
+                        <div class="review-author-title">Owner, charmainesworld.com</div>
+                    </div>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="review-card">
+                    <div class="review-quote">
+                        <span>“Our online booking requests surged within weeks of launching. The local SEO listing works beautifully—we're ranking on maps locally, which makes finding clients extremely simple.”</span>
+                    </div>
+                    <div>
+                        <div class="review-author">Susan Carrier</div>
+                        <div class="review-author-title">Founder, carrierhomecleanings.com</div>
+                    </div>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="review-card">
+                    <div class="review-quote">
+                        <span>“A clean, quiet, and executive layout that gives exactly the degree of silent prestige expected by professional board directors. Very efficient turnaround times and solid markup.”</span>
+                    </div>
+                    <div>
+                        <div class="review-author">Susan Carrier</div>
+                        <div class="review-author-title">Consultant, susancarrier.com</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container contact-layout">
+            
+            <div class="contact-info">
+                <h3>Start Scoping Your Build</h3>
+                <p>Select your package options. Let us know what pages or marketing services you're scoping out, and we'll reply with a custom architectural proposal within 24 hours.</p>
+                
+                <div class="contact-details-box">
+                    <div class="contact-detail-item">
+                        <strong>Project Scoping Email</strong>
+                        build@dynamicwebs.io
+                    </div>
+                    <div class="contact-detail-item">
+                        <strong>Direct Client Support</strong>
+                        +1 (555) 019-9238
+                    </div>
+                    <div class="contact-detail-item">
+                        <strong>Business Address</strong>
+                        Executive Suite 402, Manhattan, NY
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <form class="editorial-form" id="inquiry-form" onsubmit="handleInquirySubmit(event)">
+                    
+                    <div class="form-row-2">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" required class="form-input" placeholder="e.g. Susan Carrier">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Contact Email</label>
+                            <input type="email" id="email" required class="form-input" placeholder="e.g. sue@carrier.com">
+                        </div>
+                    </div>
+
+                    <div class="form-row-2">
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" required class="form-input" placeholder="e.g. (555) 019-9238">
+                        </div>
+                        <div class="form-group">
+                            <label for="package-select">Selected Package</label>
+                            <select id="package-select" class="form-input" style="appearance: none; background: url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2224%22 height=%2224%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%237c7a75%22 stroke-width=%222%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22><polyline points=%226 9 12 15 18 9%22></polyline></svg>') no-repeat right 15px center; background-size: 14px; background-color: var(--bg-secondary);">
+                                <option value="2">2 Pages - Starter Presentation ($500)</option>
+                                <option value="4">4 Pages - Business Suite ($700)</option>
+                                <option value="5">5+ Pages - Corporate Platform ($900+)</option>
+                                <option value="none">None - Marketing Services Only</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; align-items: center; gap: 10px; padding: 0.5rem 0;">
+                        <input type="checkbox" id="seo-addon" style="width: 20px; height: 20px; cursor: pointer; accent-color: #1c1c1c;">
+                        <label for="seo-addon" style="font-weight: 600; cursor: pointer; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em;">Include SEO & Google Maps ($75/week, Paid Monthly)</label>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="referral">How did you hear about us? (Referral Name / Code)</label>
+                        <input type="text" id="referral" class="form-input" placeholder="e.g. Friend recommendation, Susan Carrier, Google search">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Project Scope Details</label>
+                        <textarea id="message" rows="4" class="form-input" style="resize: vertical;" placeholder="Outline your project targets..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-editorial primary">Submit Proposal Request</button>
+                </form>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="editorial-footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <h2>Dynamic Webs.</h2>
+                    <p style="max-width: 320px; line-height: 1.6;">Minimalist high-end web designs crafted with deliberate code. Tailored to represent executive brands.</p>
+                </div>
+                <div class="footer-links-col">
+                    <h4>Packages</h4>
+                    <ul>
+                        <li><a href="#packages" onclick="orderPackage('2', false)">2 Pages ($500)</a></li>
+                        <li><a href="#packages" onclick="orderPackage('4', false)">4 Pages ($700)</a></li>
+                        <li><a href="#packages" onclick="orderPackage('5', false)">5+ Pages ($900+)</a></li>
+                        <li><a href="#packages" onclick="orderPackage('seo', true)">SEO Optimization ($75/wk)</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links-col">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="#portfolio">Selected Work</a></li>
+                        <li><a href="#packages">Pricing Plans</a></li>
+                        <li><a href="#reviews">Testimonials</a></li>
+                        <li><a href="#contact">Contact Support</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Dynamic Webs. All rights reserved.</p>
+                <p style="font-family: var(--font-mono); font-size: 0.75rem;">[DESIGN: EDITORIAL_SERIF_V1]</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive script logic -->
+    <script>
+        function orderPackage(pkgKey, selectSeo) {
+            const packageSelect = document.getElementById('package-select');
+            const seoAddon = document.getElementById('seo-addon');
+            
+            if (pkgKey === 'seo') {
+                packageSelect.value = 'none';
+                seoAddon.checked = true;
+            } else {
+                packageSelect.value = pkgKey;
+                seoAddon.checked = selectSeo;
+            }
+            
+            // Focus on name field
+            document.getElementById('name').focus();
+            
+            // Scroll to form section
+            document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function handleInquirySubmit(event) {
+            event.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const pkg = document.getElementById('package-select').value;
+            const seo = document.getElementById('seo-addon').checked ? 'including SEO & Google Maps ($75/week)' : 'without marketing add-ons';
+            const referral = document.getElementById('referral').value || 'None';
+
+            alert(`Thank you, ${name}!\n\nWe have logged your request for the package configuration (${pkg} Pages, ${seo}). We will reach out to you shortly at ${email} or ${phone}.\n\nReferral Recorded: ${referral}`);
+            
+            document.getElementById('inquiry-form').reset();
+        }
+    </script>
+</body>
+</html>

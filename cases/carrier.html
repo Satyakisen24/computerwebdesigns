@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrier Home Cleaning Services — Showcase & Layout</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Mono&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-color: #f7fafc;
+            --card-bg: #ffffff;
+            --text-primary: #1e293b;
+            --text-secondary: #475569;
+            --accent-color: #00b3b3;
+            --accent-bg: #e0f7f7;
+            --border-color: #e2e8f0;
+            --font-sans: 'Plus Jakarta Sans', sans-serif;
+            --font-mono: 'Space Mono', monospace;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-sans);
+            line-height: 1.6;
+        }
+
+        .back-nav {
+            background: #ffffff;
+            border-bottom: 1px solid var(--border-color);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .back-link {
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-primary);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 600;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .badge-demo {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            border: 1px solid var(--text-primary);
+            padding: 2px 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-weight: 600;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .header-tag {
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--accent-color);
+            margin-bottom: 0.75rem;
+            display: block;
+            font-weight: bold;
+        }
+
+        h1 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+        }
+
+        .header-sub {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 5rem;
+        }
+
+        .service-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2.5rem 2rem;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .service-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 20px rgba(0,0,0,0.05);
+            border-color: var(--accent-color);
+        }
+
+        .service-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 10px;
+            background: var(--accent-bg);
+            color: var(--accent-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        h2 {
+            font-size: 1.35rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+        }
+
+        .service-price {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--accent-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .service-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin-bottom: 2rem;
+            flex-grow: 1;
+        }
+
+        .service-list li {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .service-list li::before {
+            content: "✓";
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+
+        .btn-book {
+            width: 100%;
+            background: var(--text-primary);
+            color: #ffffff;
+            border: none;
+            padding: 0.85rem;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: background 0.2s;
+            text-align: center;
+        }
+
+        .btn-book:hover {
+            background: var(--accent-color);
+        }
+
+        /* Pricing Table */
+        .pricing-section {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 3rem 2.5rem;
+            margin-bottom: 5rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 1.75rem;
+            margin-bottom: 2.5rem;
+            font-weight: 700;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+        }
+
+        th, td {
+            padding: 1rem 1.25rem;
+            border-bottom: 1px solid var(--border-color);
+            font-size: 0.95rem;
+        }
+
+        th {
+            font-weight: 700;
+            background: #f8fafc;
+            color: var(--text-secondary);
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* Booking Form Portal */
+        .booking-portal {
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 3rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 600px) {
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+            .pricing-section {
+                padding: 1.5rem 1rem;
+                overflow-x: auto;
+            }
+            .booking-portal {
+                padding: 1.5rem;
+            }
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .form-group label {
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-secondary);
+        }
+
+        .form-input {
+            padding: 0.85rem 1rem;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            background: #f8fafc;
+            font-size: 0.95rem;
+            outline: none;
+        }
+
+        .form-input:focus {
+            border-color: var(--accent-color);
+            background: #ffffff;
+            box-shadow: 0 0 0 3px rgba(0, 179, 179, 0.15);
+        }
+
+        footer {
+            text-align: center;
+            padding: 4rem 2rem;
+            border-top: 1px solid var(--border-color);
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            margin-top: 4rem;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="back-nav">
+        <a href="../index.html" class="back-link" id="back-link">← Back to Demo Layout</a>
+        <span class="badge-demo">carrierhomecleanings.com</span>
+    </nav>
+
+    <div class="container">
+        <header>
+            <span class="header-tag">Professional Residential Cleaning</span>
+            <h1>Carrier Home Cleaning Services</h1>
+            <p class="header-sub">Bespoke flat-rate house cleaning services across the metropolitan area. Pristine results, every visit.</p>
+        </header>
+
+        <main>
+            <!-- Services Checklist Cards -->
+            <section class="services-grid">
+                <!-- Standard -->
+                <div class="service-card">
+                    <div class="service-icon">🧹</div>
+                    <h2>Standard Maintenance</h2>
+                    <div class="service-price">$120 <span style="font-size: 0.85rem; color: var(--text-secondary); font-weight: normal;">/ flat rate</span></div>
+                    <ul class="service-list">
+                        <li>Dusting all accessible surfaces</li>
+                        <li>Vacuuming & mopping floors</li>
+                        <li>Kitchen countertops & sink cleaning</li>
+                        <li>Bathroom sanitization</li>
+                        <li>Emptying waste bins</li>
+                    </ul>
+                    <button class="btn-book" onclick="selectService('Standard Maintenance')">Book Now</button>
+                </div>
+
+                <!-- Deep -->
+                <div class="service-card">
+                    <div class="service-icon">✨</div>
+                    <h2>Deep Restoration</h2>
+                    <div class="service-price">$220 <span style="font-size: 0.85rem; color: var(--text-secondary); font-weight: normal;">/ flat rate</span></div>
+                    <ul class="service-list">
+                        <li>All standard maintenance checklist</li>
+                        <li>Wiping baseboards & door frames</li>
+                        <li>Cleaning interior windows & sills</li>
+                        <li>Detailed cabinet exterior scrub</li>
+                        <li>Sanitizing behind heavy appliances</li>
+                    </ul>
+                    <button class="btn-book" onclick="selectService('Deep Restoration')">Book Now</button>
+                </div>
+
+                <!-- Move in/out -->
+                <div class="service-card">
+                    <div class="service-icon">📦</div>
+                    <h2>Move In / Move Out</h2>
+                    <div class="service-price">$320 <span style="font-size: 0.85rem; color: var(--text-secondary); font-weight: normal;">/ flat rate</span></div>
+                    <ul class="service-list">
+                        <li>Complete empty-home deep clean</li>
+                        <li>Interior cabinet & drawer cleaning</li>
+                        <li>Oven & refrigerator interiors</li>
+                        <li>Full dust extraction & wall wipe</li>
+                        <li>Grout detailed restoration scrub</li>
+                    </ul>
+                    <button class="btn-book" onclick="selectService('Move In / Move Out')">Book Now</button>
+                </div>
+            </section>
+
+            <!-- Flat Rate Pricing Grid -->
+            <section class="pricing-section">
+                <h2 class="section-title">Hourly & Extra Rates Table</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Extra Service Item</th>
+                            <th>Description</th>
+                            <th>Flat Add-on Rate</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Oven Interior Clean</strong></td>
+                            <td>Detailed degreasing & rack scrubbing of heavy food buildup.</td>
+                            <td>$45</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Refrigerator Interior Clean</strong></td>
+                            <td>Disinfecting, wiping shelves, and organizing.</td>
+                            <td>$40</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Window Exterior Clean</strong></td>
+                            <td>Cleaning first-floor exterior window panes and frames.</td>
+                            <td>$10 / window</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Laundry Wash & Fold</strong></td>
+                            <td>One load washed, dried, folded, and placed.</td>
+                            <td>$35</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- Booking Portal Form -->
+            <section class="booking-portal" id="booking-portal">
+                <h2 class="section-title" style="margin-bottom: 1rem;">Reserve Your Cleaning Window</h2>
+                <p style="text-align: center; color: var(--text-secondary);">Select your cleaning type, preferred date, and we'll confirm within 2 hours.</p>
+                
+                <form onsubmit="handleBooking(event)">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" required class="form-input" placeholder="e.g. Susan Carrier">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" required class="form-input" placeholder="e.g. susan@carrier.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="service-type">Cleaning Service Type</label>
+                            <select id="service-type" class="form-input">
+                                <option value="Standard Maintenance">Standard Maintenance ($120)</option>
+                                <option value="Deep Restoration">Deep Restoration ($220)</option>
+                                <option value="Move In / Move Out">Move In / Move Out ($320)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="booking-date">Preferred Date</label>
+                            <input type="date" id="booking-date" required class="form-input">
+                        </div>
+                    </div>
+                    <button type="submit" class="btn-book" style="margin-top: 2rem; padding: 1rem;">Confirm Booking Schedule</button>
+                </form>
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Carrier Home Cleaning Services. All rights reserved. Designed by Dynamic Webs.</p>
+    </footer>
+
+    <script>
+        // Set date input minimum value to today
+        document.getElementById('booking-date').min = new Date().toISOString().split('T')[0];
+
+        // Select package / service function
+        function selectService(serviceName) {
+            document.getElementById('service-type').value = serviceName;
+            document.getElementById('booking-portal').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Form Submit
+        function handleBooking(event) {
+            event.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const service = document.getElementById('service-type').value;
+            const date = document.getElementById('booking-date').value;
+
+            alert(`Thank you, ${name}!\n\nYour cleaning request for "${service}" on ${date} has been submitted. We will email a confirmation to ${email} shortly.`);
+            event.target.reset();
+        }
+
+        // Dynamic Back Button Referrer Link
+        const referrer = document.referrer;
+        const backLink = document.getElementById('back-link');
+        
+        if (referrer && (referrer.includes('demo-brutalist') || referrer.includes('demo-editorial') || referrer.includes('demo-blueprint'))) {
+            backLink.href = referrer;
+        } else {
+            backLink.href = "../index.html"; // fallback to root Selection Hub
+        }
+    </script>
+</body>
+</html>

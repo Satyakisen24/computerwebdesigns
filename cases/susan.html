@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Susan Carrier Advisory — Showcase & Layout</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Mono&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-color: #faf9f6; /* Warm alabaster */
+            --card-bg: #ffffff;
+            --text-primary: #111115;
+            --text-secondary: #484852;
+            --accent-color: #4a6cf7;
+            --border-color: #e5e2db;
+            --font-heading: 'Playfair Display', Georgia, serif;
+            --font-body: 'Plus Jakarta Sans', sans-serif;
+            --font-mono: 'Space Mono', monospace;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.65;
+            padding: 0;
+        }
+
+        .back-nav {
+            background: rgba(250, 249, 246, 0.95);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1.2rem 2.5rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(8px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .back-link {
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-primary);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 600;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .badge-demo {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            border: 1px solid var(--text-primary);
+            padding: 3px 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-weight: 600;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 5rem 2.5rem;
+        }
+
+        header {
+            margin-bottom: 5rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 3.5rem;
+        }
+
+        .header-tag {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--accent-color);
+            margin-bottom: 1.25rem;
+            display: block;
+            font-weight: bold;
+        }
+
+        h1 {
+            font-family: var(--font-heading);
+            font-size: clamp(2.5rem, 5vw, 3.8rem);
+            font-weight: 400;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.01em;
+        }
+
+        .header-sub {
+            color: var(--text-secondary);
+            font-size: 1.15rem;
+            max-width: 650px;
+            line-height: 1.7;
+            font-weight: 300;
+        }
+
+        /* Timeline */
+        .section-title {
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
+            font-weight: 400;
+            margin-bottom: 2.5rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+
+        .timeline {
+            position: relative;
+            margin-bottom: 5rem;
+            padding-left: 2rem;
+            border-left: 1px solid var(--border-color);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 3rem;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: -2.35rem;
+            top: 0.35rem;
+            width: 9px;
+            height: 9px;
+            border-radius: 50%;
+            background: var(--text-primary);
+            border: 2px solid var(--bg-color);
+        }
+
+        .timeline-item:hover .timeline-dot {
+            background: var(--accent-color);
+            transform: scale(1.3);
+        }
+
+        .timeline-date {
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            color: var(--accent-color);
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-desc {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+        }
+
+        /* Publications Table */
+        .publications-section {
+            margin-bottom: 5rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            margin-top: 1.5rem;
+        }
+
+        th, td {
+            padding: 1.1rem 0;
+            border-bottom: 1px solid var(--border-color);
+            font-size: 0.95rem;
+        }
+
+        th {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--text-secondary);
+            font-weight: bold;
+        }
+
+        /* Contact Advisory form */
+        .advisory-contact {
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            padding: 3rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--text-secondary);
+            font-weight: bold;
+        }
+
+        .form-input {
+            padding: 0.9rem;
+            border: 1px solid var(--border-color);
+            background: var(--bg-color);
+            font-size: 0.95rem;
+            outline: none;
+        }
+
+        .form-input:focus {
+            border-color: var(--text-primary);
+            background: #ffffff;
+        }
+
+        .btn-submit {
+            display: block;
+            width: 100%;
+            background: var(--text-primary);
+            color: #ffffff;
+            border: none;
+            padding: 1rem;
+            font-size: 0.85rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn-submit:hover {
+            background: var(--accent-color);
+        }
+
+        @media (max-width: 600px) {
+            .advisory-contact {
+                padding: 1.5rem;
+            }
+        }
+
+        footer {
+            text-align: center;
+            padding: 4rem 2rem;
+            border-top: 1px solid var(--border-color);
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            margin-top: 4rem;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="back-nav">
+        <a href="../index.html" class="back-link" id="back-link">← Back to Demo Layout</a>
+        <span class="badge-demo">susancarrier.com</span>
+    </nav>
+
+    <div class="container">
+        <header>
+            <span class="header-tag">Executive Advisor & Board Member</span>
+            <h1>Susan Carrier Advisory</h1>
+            <p class="header-sub">Strategic corporate counsel, board representations, and investment advisory configurations for high-growth enterprises.</p>
+        </header>
+
+        <main>
+            <!-- Timeline Section -->
+            <section>
+                <h2 class="section-title">Milestones & Representations</h2>
+                <div class="timeline">
+                    <!-- Item 1 -->
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">2022 — PRESENT</div>
+                        <div class="timeline-title">Lead Independent Director — Apex Logistics Group</div>
+                        <p class="timeline-desc">Advising on governance restructure, capital deployment, and international supply line expansions across European trade zones.</p>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">2018 — 2022</div>
+                        <div class="timeline-title">Strategy Committee Chair — Vantage Capital Partners</div>
+                        <p class="timeline-desc">Oversaw the structural scoping and portfolio allocations resulting in a 24% year-over-year asset efficiency yield improvement.</p>
+                    </div>
+
+                    <!-- Item 3 -->
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">2014 — 2018</div>
+                        <div class="timeline-title">Board Advisor & Executive Director — Summit Tech Holdings</div>
+                        <p class="timeline-desc">Structured strategic partnerships, capital scoping sessions, and led M&A preparation protocols for peak enterprise exits.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Publications Table -->
+            <section class="publications-section">
+                <h2 class="section-title">Publications & Columns</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="width: 20%;">Date</th>
+                            <th style="width: 50%;">Article Title</th>
+                            <th style="width: 30%;">Journal / Outlet</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Mar 2026</td>
+                            <td><strong>Capital Scoping in Asymmetric Markets</strong></td>
+                            <td>Executive Advisory Review</td>
+                        </tr>
+                        <tr>
+                            <td>Sep 2025</td>
+                            <td><strong>Restructuring Governance For Global Scale</strong></td>
+                            <td>Boardroom Insights Quarterly</td>
+                        </tr>
+                        <tr>
+                            <td>Jan 2025</td>
+                            <td><strong>The Architecture of Corporate Reinvestment</strong></td>
+                            <td>Finance & Strategy Journal</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- Contact Advisory Section -->
+            <section class="advisory-contact">
+                <h2 class="section-title" style="border-bottom: none; text-align: center; margin-bottom: 1.5rem;">Inquire Advisory Scoping</h2>
+                <form onsubmit="handleInquiry(event)">
+                    <div class="form-group">
+                        <label for="name">Your Name & Title</label>
+                        <input type="text" id="name" required class="form-input" placeholder="e.g. Susan Carrier, CEO">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Corporate Email Address</label>
+                        <input type="email" id="email" required class="form-input" placeholder="e.g. susan@corporate.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="scope">Advisory Scope Details</label>
+                        <textarea id="scope" rows="4" class="form-input" style="resize: vertical;" placeholder="Outline your corporate governance or strategic advisory targets..."></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit">Submit Advisory Request</button>
+                </form>
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Susan Carrier Advisory. All rights reserved. Designed by Dynamic Webs.</p>
+    </footer>
+
+    <script>
+        function handleInquiry(event) {
+            event.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+
+            alert(`Thank you, ${name}!\n\nYour strategic inquiry has been submitted. Susan Carrier's office will reach out to you at ${email} within 24 business hours.`);
+            event.target.reset();
+        }
+
+        // Dynamic Back Button Referrer Link
+        const referrer = document.referrer;
+        const backLink = document.getElementById('back-link');
+        
+        if (referrer && (referrer.includes('demo-brutalist') || referrer.includes('demo-editorial') || referrer.includes('demo-blueprint'))) {
+            backLink.href = referrer;
+        } else {
+            backLink.href = "../index.html"; // fallback to root Selection Hub
+        }
+    </script>
+</body>
+</html>

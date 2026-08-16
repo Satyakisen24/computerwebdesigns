@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Charmaine's World — Showcase & Layout</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&family=Space+Mono&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-color: #fcfaf7;
+            --text-color: #1a1917;
+            --accent-color: #ff7e67;
+            --border-color: #e3ded6;
+            --font-serif: 'Playfair Display', Georgia, serif;
+            --font-sans: 'Plus Jakarta Sans', sans-serif;
+            --font-mono: 'Space Mono', monospace;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: var(--font-sans);
+            line-height: 1.7;
+            padding: 0;
+        }
+
+        .back-nav {
+            border-bottom: 1px solid var(--border-color);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            background: rgba(252, 250, 247, 0.9);
+            backdrop-filter: blur(8px);
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .back-link {
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-color);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 600;
+        }
+
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+
+        .badge-demo {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            border: 1px solid var(--text-color);
+            padding: 2px 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        header {
+            margin-bottom: 5rem;
+            text-align: center;
+        }
+
+        .header-tag {
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        h1 {
+            font-family: var(--font-serif);
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 400;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+        }
+
+        .header-sub {
+            font-family: var(--font-serif);
+            font-style: italic;
+            font-size: 1.25rem;
+            color: #6e6b64;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .showcase-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 4rem;
+            margin-bottom: 5rem;
+        }
+
+        .writing-card {
+            border-top: 1px solid var(--border-color);
+            padding-top: 2rem;
+        }
+
+        .card-meta {
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            color: #8c887e;
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        h2 {
+            font-family: var(--font-serif);
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .essay-excerpt {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: #3b3935;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .essay-body {
+            font-size: 1rem;
+            color: #4a4742;
+            margin-bottom: 1.5rem;
+        }
+
+        .read-more-link {
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-weight: 600;
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .read-more-link:hover {
+            text-decoration: underline;
+        }
+
+        .art-direction {
+            border-top: 1px solid var(--border-color);
+            padding-top: 2.5rem;
+        }
+
+        .art-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 600px) {
+            .art-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .art-item {
+            background: #fff;
+            border: 1px solid var(--border-color);
+            padding: 12px;
+        }
+
+        .art-box {
+            width: 100%;
+            aspect-ratio: 4/3;
+            background: #f4eae1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #8c887e;
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            border: 1px solid #ebdcd0;
+        }
+
+        .art-caption {
+            margin-top: 10px;
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            color: #6e6b64;
+        }
+
+        footer {
+            text-align: center;
+            padding: 4rem 2rem;
+            border-top: 1px solid var(--border-color);
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            color: #8c887e;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="back-nav">
+        <a href="../index.html" class="back-link" id="back-link">← Back to Demo Layout</a>
+        <span class="badge-demo">charmainesworld.com</span>
+    </nav>
+
+    <div class="container">
+        <header>
+            <span class="header-tag">Narrative & Visual Art</span>
+            <h1>Charmaine's World</h1>
+            <p class="header-sub">A creative journal capturing fleeting details, visual curation, and narrative experiments.</p>
+        </header>
+
+        <main class="showcase-grid">
+            <!-- Piece 1 -->
+            <article class="writing-card">
+                <div class="card-meta">
+                    <span>ESSAY</span>
+                    <span>OCTOBER 2026</span>
+                </div>
+                <h2>The Silent Architecture of Margins</h2>
+                <p class="essay-excerpt">On the necessity of whitespace in book typography and how empty space shapes the weight of the written word.</p>
+                <div class="essay-body">
+                    <p>Margins are not merely the leftovers of layout configuration; they are the buffer zone between the writer's mind and the reader's immediate reality. A page without sufficient boundary feels like a crowded room, forcing words to scramble for attention. When we afford a text its natural margins, we give thoughts room to resonate, expand, and finally settle...</p>
+                </div>
+                <a href="#" class="read-more-link" onclick="alert('Full essay content placeholder'); return false;">Read full text →</a>
+            </article>
+
+            <!-- Piece 2 -->
+            <article class="writing-card">
+                <div class="card-meta">
+                    <span>POETRY</span>
+                    <span>AUGUST 2026</span>
+                </div>
+                <h2>Echoes on Plastered Walls</h2>
+                <p class="essay-excerpt">A brief observation of shifting morning light patterns against rough-cast studio brickwork.</p>
+                <div class="essay-body">
+                    <p style="font-style: italic; white-space: pre-line;">The light cuts thin at half-past seven
+                    long white bars across the floor
+                    dust motes drifting like minor planets
+                    settling slow beside the door.
+                    
+                    No sound but the radiator's hum
+                    and plaster cooling in the seam
+                    we sit and watch the shadows come
+                    to wake us from a quiet dream.</p>
+                </div>
+            </article>
+
+            <!-- Art Direction Visuals -->
+            <section class="art-direction">
+                <div class="card-meta">
+                    <span>VISUAL DIRECTIONS</span>
+                    <span>2026 COLLECTIVE</span>
+                </div>
+                <h2>Curated Gallery Sketches</h2>
+                <p style="color: #6e6b64; margin-bottom: 2rem;">Selected frames representing artistic directions, photography, and layout sketches from recent publication design drafts.</p>
+                
+                <div class="art-grid">
+                    <div class="art-item">
+                        <div class="art-box">
+                            [Sketch Frame 01]
+                        </div>
+                        <div class="art-caption">
+                            No. 12 - Indigo Studies on Linen Paper
+                        </div>
+                    </div>
+                    <div class="art-item">
+                        <div class="art-box">
+                            [Sketch Frame 02]
+                        </div>
+                        <div class="art-caption">
+                            No. 15 - Shadow Play at Manhattan studio
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Charmaine's World. All rights reserved. Designed by Dynamic Webs.</p>
+    </footer>
+
+    <script>
+        // Dynamic Back Button Referrer Link
+        const referrer = document.referrer;
+        const backLink = document.getElementById('back-link');
+        
+        if (referrer && (referrer.includes('demo-brutalist') || referrer.includes('demo-editorial') || referrer.includes('demo-blueprint'))) {
+            backLink.href = referrer;
+        } else {
+            backLink.href = "../index.html"; // fallback to root Selection Hub
+        }
+    </script>
+</body>
+</html>

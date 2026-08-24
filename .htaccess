@@ -1,0 +1,2 @@
+# Set the default directory index to load the Editorial Serif demo as the homepage
+DirectoryIndex demo-editorial/index.html

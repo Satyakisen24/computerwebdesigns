@@ -5,4 +5,4 @@ deployment:
     - export DEPLOYPATH=/home/epodesn7/public_html/
     
     # Sync all files to the deploy path, excluding git-specific metadata
-    - /bin/rsync -avz --exclude '.git' --exclude '.cpanel.yml' * $DEPLOYPATH
+    - /bin/rsync -avz --exclude '.git' --exclude '.cpanel.yml' ./ $DEPLOYPATH

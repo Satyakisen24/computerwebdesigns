@@ -6,3 +6,6 @@ deployment:
     
     # Sync all files to the deploy path, excluding git-specific metadata
     - /bin/rsync -avz --exclude '.git' --exclude '.cpanel.yml' ./ $DEPLOYPATH
+    
+    # Automatically fix permissions of public_html after sync
+    - /bin/chmod 755 /home/epodesn7/public_html
